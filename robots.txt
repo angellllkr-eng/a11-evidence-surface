@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /console
+Disallow: /console/
+
+Sitemap: https://a11-k.space/sitemap.xml
+
+# Private operational surfaces are not public search content.
+# The Evidence Room is intentionally excluded from the public index.
