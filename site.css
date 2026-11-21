@@ -185,3 +185,14 @@ footer a { color: var(--ink); font-weight: 700; text-decoration: none; }
 .access-consent input { width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--accent); }
 .access-form button { justify-self: start; border: 0; }
 .access-status { min-height: 20px; margin: 0; color: var(--green, #3e8067); font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.5; }
+
+
+/* A11 motion system — progressive enhancement, reduced-motion aware. */
+.a11-reading-progress{position:fixed;inset:0 auto auto 0;z-index:100;width:100%;height:3px;background:var(--accent,#3d59d6);transform:scaleX(0);transform-origin:left center;pointer-events:none}
+.a11-reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity 680ms cubic-bezier(.2,.7,.2,1),transform 680ms cubic-bezier(.2,.7,.2,1);transition-delay:var(--a11-delay,0ms)}
+.a11-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.a11-motion-ready .home-hero-visual,.a11-motion-ready .surface-visual{animation:a11-float 8s ease-in-out infinite}
+.home-route-card,.surface-card,.doc-link,.home-bento-card,.home-button,.button,.nav-cta{transition:transform 220ms ease,box-shadow 220ms ease,background-color 220ms ease,color 220ms ease,border-color 220ms ease}
+.home-route-card:hover,.surface-card:hover,.doc-link:hover,.home-bento-card:hover{transform:translateY(-5px)}
+@keyframes a11-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.a11-reveal{opacity:1;transform:none}}
