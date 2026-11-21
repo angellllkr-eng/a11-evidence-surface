@@ -1047,3 +1047,13 @@
   .home-bento-card:hover,
   .home-route-card:hover { transform: none; }
 }
+
+
+/* Homepage interaction polish */
+.home-hero-visual{perspective:1100px}
+.home-preview-window{transition:transform 500ms cubic-bezier(.2,.7,.2,1),box-shadow 500ms ease}
+.home-hero-visual:hover .home-preview-window{transform:rotateY(-2deg) rotateX(1deg) translateY(-4px);box-shadow:24px 28px 0 var(--home-blue-soft),0 28px 60px rgba(16,40,43,.12)}
+.home-route-card,.home-bento-card{will-change:transform}
+.home-nav-cta,.home-button{position:relative;overflow:hidden}
+.home-nav-cta::after,.home-button::after{position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.16) 48%,transparent 70%);transform:translateX(-120%);transition:transform 650ms ease;content:""}
+.home-nav-cta:hover::after,.home-button:hover::after{transform:translateX(120%)}
