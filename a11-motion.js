@@ -13,6 +13,7 @@
     toggle.type = 'button';
     toggle.setAttribute('aria-controls', nav.id);
     toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation menu');
     toggle.textContent = 'Menu';
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
@@ -30,6 +31,7 @@
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open navigation menu');
+        toggle.focus();
       }
     });
     header.insertBefore(toggle, nav);
